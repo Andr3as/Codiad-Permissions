@@ -25,11 +25,11 @@
         
         //////////////////////////////////////////////////////////
         //
-        //  Add files and directory to the lists
+        //  Show dialog to modify permissions
 		//
 		//  Parameters:
 		//
-		//  path - {Array} - File path
+		//  path - {String} - File path
 		//
 		//////////////////////////////////////////////////////////
         showDialog: function(path) {
