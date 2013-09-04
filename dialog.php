@@ -5,9 +5,11 @@
 -->
 <form>
     <?php
+        error_reporting(0);
+        
         require_once('../../common.php');
         checkSession();
-        error_reporting(0);
+        
         $path = "../../workspace/" . $_GET['path'];
         if (is_dir($path)) {
             $perm = substr(decoct(fileperms($path)),2);
