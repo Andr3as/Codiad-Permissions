@@ -45,13 +45,13 @@
         change: function() {
             var perm = $('#permissions').val();
             codiad.modal.unload();
-            console.log($.getJSON(this.path+"controller.php?action=changePermission&path="+this.file+"&mode="+perm, function(data){
+            $.getJSON(this.path+"controller.php?action=changePermission&path="+this.file+"&mode="+perm, function(data){
                 if (data.status == "error") {
                     codiad.message.error(data.message);
                 } else {
                     codiad.message.success(data.message);
                 }
-            }));
+            });
         }
         
     };
