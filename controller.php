@@ -6,16 +6,15 @@
  */
     error_reporting(0);
 
+    require_once('class.util.php');
     require_once('../../common.php');
     checkSession();
-    
-    $localPath = "../../workspace/";
     
     switch($_GET['action']) {
         
         case 'changePermission':
             if (isset($_GET['path']) && isset($_GET['mode'])) {
-                $path = $localPath . $_GET['path'];
+                $path = util::getWorkspacePath($_GET['path']);
                 $mode = $_GET['mode'];
                 if ($mode[0] != '0') {
                     $mode = '0'.$mode;

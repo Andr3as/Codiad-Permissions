@@ -7,10 +7,11 @@
     <?php
         error_reporting(0);
         
+        require_once('class.util.php');
         require_once('../../common.php');
         checkSession();
         
-        $path = "../../workspace/" . $_GET['path'];
+        $path = util::getWorkspacePath($_GET['path']);
         if (is_dir($path)) {
             $perm = substr(decoct(fileperms($path)),2);
         } else {
